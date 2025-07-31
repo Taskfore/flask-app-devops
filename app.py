@@ -2,6 +2,9 @@ import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
+from flask import redirect
+
+
 
 load_dotenv()
 
@@ -50,7 +53,16 @@ def get_user(user_id):
     user = User.query.get_or_404(user_id)
     return jsonify(user.to_dict())
 
+with app.app_context():
+    db.create_all()
+    
+@app.route('/')
+def root_redirect():
+    return redirect('/health')
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
+
+@app.route('/health')
+def health():
+    return "OK", 200

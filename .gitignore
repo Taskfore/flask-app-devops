@@ -1,1 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env variables
 .env
+.env.*
+
+# Docker volumes
+db_data/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log

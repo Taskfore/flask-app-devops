@@ -8,4 +8,4 @@ docker-compose down
 # Build images and start containers in detached mode
 docker-compose up --build -d
 
-echo "✅ Application deployed at http://localhost:5000"
+echo "Application deployed at http://localhost:5000"

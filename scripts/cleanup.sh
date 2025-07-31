@@ -9,5 +9,5 @@ if [[ $confirm == [yY] ]]; then
     docker system prune -f
     echo "Cleanup done."
 else
-    echo "❌ Cleanup canceled."
+    echo "Cleanup canceled."
 fi
